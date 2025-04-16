@@ -1,0 +1,306 @@
+{
+  "contractName": "IFlashAirdropReceiver",
+  "abi": [
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "initiator",
+          "type": "address"
+        },
+        {
+          "internalType": "address",
+          "name": "nftAddress",
+          "type": "address"
+        },
+        {
+          "internalType": "uint256[]",
+          "name": "tokenIds",
+          "type": "uint256[]"
+        },
+        {
+          "internalType": "bytes",
+          "name": "data",
+          "type": "bytes"
+        }
+      ],
+      "name": "onFlashLoan",
+      "outputs": [
+        {
+          "internalType": "bool",
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    }
+  ],
+  "metadata": "{\"compiler\":{\"version\":\"0.8.20+commit.a1b79de6\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[{\"internalType\":\"address\",\"name\":\"initiator\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"nftAddress\",\"type\":\"address\"},{\"internalType\":\"uint256[]\",\"name\":\"tokenIds\",\"type\":\"uint256[]\"},{\"internalType\":\"bytes\",\"name\":\"data\",\"type\":\"bytes\"}],\"name\":\"onFlashLoan\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"stateMutability\":\"nonpayable\",\"type\":\"function\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{\"onFlashLoan(address,address,uint256[],bytes)\":{\"details\":\"Receive a flash loan.\",\"params\":{\"data\":\"Arbitrary data structure, intended to contain user-defined parameters.\",\"initiator\":\"The initiator of the loan.\",\"nftAddress\":\"address of the NFT collection.\",\"tokenIds\":\"array of tokens Ids to be lent.\"},\"returns\":{\"_0\":\"bool either the operation was successful or not.\"}}},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"project:/contracts/interfaces/IFlashAirdropReceiver.sol\":\"IFlashAirdropReceiver\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[]},\"sources\":{\"project:/contracts/interfaces/IFlashAirdropReceiver.sol\":{\"keccak256\":\"0x314098fc3a4a63b91b15a5047be6cadf3123637c8b2ecdf19b4b917fb7320ab0\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://e7aa1773518197092c31e2bfca2c7f18596924f9b5728deca6ef29764ea18e84\",\"dweb:/ipfs/QmVhB9BwZ2hW3on9n1qJTJKvQH6AqSWLGxFMNfhNQRkASx\"]}},\"version\":1}",
+  "bytecode": "0x",
+  "deployedBytecode": "0x",
+  "immutableReferences": {},
+  "generatedSources": [],
+  "deployedGeneratedSources": [],
+  "sourceMap": "",
+  "deployedSourceMap": "",
+  "source": "// SPDX-License-Identifier: MIT\n\npragma solidity ^0.8.18;\n\ninterface IFlashAirdropReceiver {\n    /**\n     * @dev Receive a flash loan.\n     * @param initiator The initiator of the loan.\n     * @param nftAddress address of the NFT collection.\n     * @param tokenIds array of tokens Ids to be lent.\n     * @param data Arbitrary data structure, intended to contain user-defined parameters.\n     * @return bool either the operation was successful or not.\n     */\n    function onFlashLoan(\n        address initiator,\n        address nftAddress,\n        uint256[] calldata tokenIds,\n        bytes calldata data\n    ) external returns (bool);\n}\n",
+  "sourcePath": "/Users/yosgi/freelancer/DeFiForge/contracts/contracts/interfaces/IFlashAirdropReceiver.sol",
+  "ast": {
+    "absolutePath": "project:/contracts/interfaces/IFlashAirdropReceiver.sol",
+    "exportedSymbols": {
+      "IFlashAirdropReceiver": [
+        9791
+      ]
+    },
+    "id": 9792,
+    "license": "MIT",
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 9775,
+        "literals": [
+          "solidity",
+          "^",
+          "0.8",
+          ".18"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "33:24:36"
+      },
+      {
+        "abstract": false,
+        "baseContracts": [],
+        "canonicalName": "IFlashAirdropReceiver",
+        "contractDependencies": [],
+        "contractKind": "interface",
+        "fullyImplemented": false,
+        "id": 9791,
+        "linearizedBaseContracts": [
+          9791
+        ],
+        "name": "IFlashAirdropReceiver",
+        "nameLocation": "69:21:36",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "documentation": {
+              "id": 9776,
+              "nodeType": "StructuredDocumentation",
+              "src": "97:361:36",
+              "text": " @dev Receive a flash loan.\n @param initiator The initiator of the loan.\n @param nftAddress address of the NFT collection.\n @param tokenIds array of tokens Ids to be lent.\n @param data Arbitrary data structure, intended to contain user-defined parameters.\n @return bool either the operation was successful or not."
+            },
+            "functionSelector": "7f0df21b",
+            "id": 9790,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "onFlashLoan",
+            "nameLocation": "472:11:36",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 9786,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 9778,
+                  "mutability": "mutable",
+                  "name": "initiator",
+                  "nameLocation": "501:9:36",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 9790,
+                  "src": "493:17:36",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 9777,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "493:7:36",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 9780,
+                  "mutability": "mutable",
+                  "name": "nftAddress",
+                  "nameLocation": "528:10:36",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 9790,
+                  "src": "520:18:36",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 9779,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "520:7:36",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 9783,
+                  "mutability": "mutable",
+                  "name": "tokenIds",
+                  "nameLocation": "567:8:36",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 9790,
+                  "src": "548:27:36",
+                  "stateVariable": false,
+                  "storageLocation": "calldata",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_array$_t_uint256_$dyn_calldata_ptr",
+                    "typeString": "uint256[]"
+                  },
+                  "typeName": {
+                    "baseType": {
+                      "id": 9781,
+                      "name": "uint256",
+                      "nodeType": "ElementaryTypeName",
+                      "src": "548:7:36",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "id": 9782,
+                    "nodeType": "ArrayTypeName",
+                    "src": "548:9:36",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_array$_t_uint256_$dyn_storage_ptr",
+                      "typeString": "uint256[]"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 9785,
+                  "mutability": "mutable",
+                  "name": "data",
+                  "nameLocation": "600:4:36",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 9790,
+                  "src": "585:19:36",
+                  "stateVariable": false,
+                  "storageLocation": "calldata",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes_calldata_ptr",
+                    "typeString": "bytes"
+                  },
+                  "typeName": {
+                    "id": 9784,
+                    "name": "bytes",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "585:5:36",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes_storage_ptr",
+                      "typeString": "bytes"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "483:127:36"
+            },
+            "returnParameters": {
+              "id": 9789,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 9788,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nameLocation": "-1:-1:-1",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 9790,
+                  "src": "629:4:36",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bool",
+                    "typeString": "bool"
+                  },
+                  "typeName": {
+                    "id": 9787,
+                    "name": "bool",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "629:4:36",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "628:6:36"
+            },
+            "scope": 9791,
+            "src": "463:172:36",
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "external"
+          }
+        ],
+        "scope": 9792,
+        "src": "59:578:36",
+        "usedErrors": [],
+        "usedEvents": []
+      }
+    ],
+    "src": "33:605:36"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.8.20+commit.a1b79de6.Emscripten.clang"
+  },
+  "networks": {},
+  "schemaVersion": "3.4.16",
+  "updatedAt": "2024-12-06T09:30:41.186Z",
+  "devdoc": {
+    "kind": "dev",
+    "methods": {
+      "onFlashLoan(address,address,uint256[],bytes)": {
+        "details": "Receive a flash loan.",
+        "params": {
+          "data": "Arbitrary data structure, intended to contain user-defined parameters.",
+          "initiator": "The initiator of the loan.",
+          "nftAddress": "address of the NFT collection.",
+          "tokenIds": "array of tokens Ids to be lent."
+        },
+        "returns": {
+          "_0": "bool either the operation was successful or not."
+        }
+      }
+    },
+    "version": 1
+  },
+  "userdoc": {
+    "kind": "user",
+    "methods": {},
+    "version": 1
+  }
+}

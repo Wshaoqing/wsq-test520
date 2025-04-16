@@ -1,0 +1,1010 @@
+{
+  "contractName": "PoolStructs",
+  "abi": [],
+  "metadata": "{\"compiler\":{\"version\":\"0.8.20+commit.a1b79de6\"},\"language\":\"Solidity\",\"output\":{\"abi\":[],\"devdoc\":{\"kind\":\"dev\",\"methods\":{},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"project:/contracts/interfaces/PoolStructs.sol\":\"PoolStructs\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[]},\"sources\":{\"project:/contracts/interfaces/PoolStructs.sol\":{\"keccak256\":\"0x07a177c4ed55a6942fa0b23da4331cc568b6988f2df7551fabd5543cafa32e63\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://a3a79ad53c0d65207793ab43fd30d3243f7d38a56b42760550815718a617c147\",\"dweb:/ipfs/QmU9Y5C5TsB6UP1wEkTcvSnMbQB9Rr7aFrcQ61yEX27QXw\"]}},\"version\":1}",
+  "bytecode": "0x",
+  "deployedBytecode": "0x",
+  "immutableReferences": {},
+  "generatedSources": [],
+  "deployedGeneratedSources": [],
+  "sourceMap": "",
+  "deployedSourceMap": "",
+  "source": "// SPDX-License-Identifier: MIT\n\npragma solidity ^0.8.18;\n\ninterface PoolStructs {\n    enum TokenType {\n        ERC20,\n        ERC721\n    }\n\n    struct SupportedToken {\n        address usdPriceFeed;\n        TokenType tokenType;\n        bool supported;\n    }\n\n    struct AccountShares {\n        uint256 collateral;\n        uint256 borrow;\n    }\n\n    struct Vault {\n        uint128 amount;\n        uint128 shares;\n    }\n\n    struct TokenVault {\n        Vault totalAsset;\n        Vault totalBorrow;\n        VaultInfo vaultInfo;\n    }\n\n    struct LiquidateWarn {\n        address liquidator;\n        uint64 liquidationTimestamp;\n    }\n\n    struct VaultInfo {\n        uint64 reserveRatio;\n        uint64 feeToProtocolRate;\n        uint64 flashFeeRate;\n        uint64 ratePerSec;\n        uint64 lastBlock;\n        uint64 lastTimestamp;\n        uint64 baseRate;\n        uint64 slope1;\n        uint64 slope2;\n        uint256 optimalUtilization;\n    }\n\n    struct VaultSetupParams {\n        uint64 reserveRatio;\n        uint64 feeToProtocolRate;\n        uint64 flashFeeRate;\n        uint64 baseRate;\n        uint64 slope1;\n        uint64 slope2;\n        uint256 optimalUtilization;\n    }\n}\n",
+  "sourcePath": "/Users/yosgi/freelancer/DeFiForge/contracts/contracts/interfaces/PoolStructs.sol",
+  "ast": {
+    "absolutePath": "project:/contracts/interfaces/PoolStructs.sol",
+    "exportedSymbols": {
+      "PoolStructs": [
+        9888
+      ]
+    },
+    "id": 9889,
+    "license": "MIT",
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 9815,
+        "literals": [
+          "solidity",
+          "^",
+          "0.8",
+          ".18"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "33:24:38"
+      },
+      {
+        "abstract": false,
+        "baseContracts": [],
+        "canonicalName": "PoolStructs",
+        "contractDependencies": [],
+        "contractKind": "interface",
+        "fullyImplemented": true,
+        "id": 9888,
+        "linearizedBaseContracts": [
+          9888
+        ],
+        "name": "PoolStructs",
+        "nameLocation": "69:11:38",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "canonicalName": "PoolStructs.TokenType",
+            "id": 9818,
+            "members": [
+              {
+                "id": 9816,
+                "name": "ERC20",
+                "nameLocation": "112:5:38",
+                "nodeType": "EnumValue",
+                "src": "112:5:38"
+              },
+              {
+                "id": 9817,
+                "name": "ERC721",
+                "nameLocation": "127:6:38",
+                "nodeType": "EnumValue",
+                "src": "127:6:38"
+              }
+            ],
+            "name": "TokenType",
+            "nameLocation": "92:9:38",
+            "nodeType": "EnumDefinition",
+            "src": "87:52:38"
+          },
+          {
+            "canonicalName": "PoolStructs.SupportedToken",
+            "id": 9826,
+            "members": [
+              {
+                "constant": false,
+                "id": 9820,
+                "mutability": "mutable",
+                "name": "usdPriceFeed",
+                "nameLocation": "185:12:38",
+                "nodeType": "VariableDeclaration",
+                "scope": 9826,
+                "src": "177:20:38",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_address",
+                  "typeString": "address"
+                },
+                "typeName": {
+                  "id": 9819,
+                  "name": "address",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "177:7:38",
+                  "stateMutability": "nonpayable",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  }
+                },
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 9823,
+                "mutability": "mutable",
+                "name": "tokenType",
+                "nameLocation": "217:9:38",
+                "nodeType": "VariableDeclaration",
+                "scope": 9826,
+                "src": "207:19:38",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_enum$_TokenType_$9818",
+                  "typeString": "enum PoolStructs.TokenType"
+                },
+                "typeName": {
+                  "id": 9822,
+                  "nodeType": "UserDefinedTypeName",
+                  "pathNode": {
+                    "id": 9821,
+                    "name": "TokenType",
+                    "nameLocations": [
+                      "207:9:38"
+                    ],
+                    "nodeType": "IdentifierPath",
+                    "referencedDeclaration": 9818,
+                    "src": "207:9:38"
+                  },
+                  "referencedDeclaration": 9818,
+                  "src": "207:9:38",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_enum$_TokenType_$9818",
+                    "typeString": "enum PoolStructs.TokenType"
+                  }
+                },
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 9825,
+                "mutability": "mutable",
+                "name": "supported",
+                "nameLocation": "241:9:38",
+                "nodeType": "VariableDeclaration",
+                "scope": 9826,
+                "src": "236:14:38",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_bool",
+                  "typeString": "bool"
+                },
+                "typeName": {
+                  "id": 9824,
+                  "name": "bool",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "236:4:38",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bool",
+                    "typeString": "bool"
+                  }
+                },
+                "visibility": "internal"
+              }
+            ],
+            "name": "SupportedToken",
+            "nameLocation": "152:14:38",
+            "nodeType": "StructDefinition",
+            "scope": 9888,
+            "src": "145:112:38",
+            "visibility": "public"
+          },
+          {
+            "canonicalName": "PoolStructs.AccountShares",
+            "id": 9831,
+            "members": [
+              {
+                "constant": false,
+                "id": 9828,
+                "mutability": "mutable",
+                "name": "collateral",
+                "nameLocation": "302:10:38",
+                "nodeType": "VariableDeclaration",
+                "scope": 9831,
+                "src": "294:18:38",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint256",
+                  "typeString": "uint256"
+                },
+                "typeName": {
+                  "id": 9827,
+                  "name": "uint256",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "294:7:38",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  }
+                },
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 9830,
+                "mutability": "mutable",
+                "name": "borrow",
+                "nameLocation": "330:6:38",
+                "nodeType": "VariableDeclaration",
+                "scope": 9831,
+                "src": "322:14:38",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint256",
+                  "typeString": "uint256"
+                },
+                "typeName": {
+                  "id": 9829,
+                  "name": "uint256",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "322:7:38",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  }
+                },
+                "visibility": "internal"
+              }
+            ],
+            "name": "AccountShares",
+            "nameLocation": "270:13:38",
+            "nodeType": "StructDefinition",
+            "scope": 9888,
+            "src": "263:80:38",
+            "visibility": "public"
+          },
+          {
+            "canonicalName": "PoolStructs.Vault",
+            "id": 9836,
+            "members": [
+              {
+                "constant": false,
+                "id": 9833,
+                "mutability": "mutable",
+                "name": "amount",
+                "nameLocation": "380:6:38",
+                "nodeType": "VariableDeclaration",
+                "scope": 9836,
+                "src": "372:14:38",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint128",
+                  "typeString": "uint128"
+                },
+                "typeName": {
+                  "id": 9832,
+                  "name": "uint128",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "372:7:38",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint128",
+                    "typeString": "uint128"
+                  }
+                },
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 9835,
+                "mutability": "mutable",
+                "name": "shares",
+                "nameLocation": "404:6:38",
+                "nodeType": "VariableDeclaration",
+                "scope": 9836,
+                "src": "396:14:38",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint128",
+                  "typeString": "uint128"
+                },
+                "typeName": {
+                  "id": 9834,
+                  "name": "uint128",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "396:7:38",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint128",
+                    "typeString": "uint128"
+                  }
+                },
+                "visibility": "internal"
+              }
+            ],
+            "name": "Vault",
+            "nameLocation": "356:5:38",
+            "nodeType": "StructDefinition",
+            "scope": 9888,
+            "src": "349:68:38",
+            "visibility": "public"
+          },
+          {
+            "canonicalName": "PoolStructs.TokenVault",
+            "id": 9846,
+            "members": [
+              {
+                "constant": false,
+                "id": 9839,
+                "mutability": "mutable",
+                "name": "totalAsset",
+                "nameLocation": "457:10:38",
+                "nodeType": "VariableDeclaration",
+                "scope": 9846,
+                "src": "451:16:38",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_struct$_Vault_$9836_storage_ptr",
+                  "typeString": "struct PoolStructs.Vault"
+                },
+                "typeName": {
+                  "id": 9838,
+                  "nodeType": "UserDefinedTypeName",
+                  "pathNode": {
+                    "id": 9837,
+                    "name": "Vault",
+                    "nameLocations": [
+                      "451:5:38"
+                    ],
+                    "nodeType": "IdentifierPath",
+                    "referencedDeclaration": 9836,
+                    "src": "451:5:38"
+                  },
+                  "referencedDeclaration": 9836,
+                  "src": "451:5:38",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_struct$_Vault_$9836_storage_ptr",
+                    "typeString": "struct PoolStructs.Vault"
+                  }
+                },
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 9842,
+                "mutability": "mutable",
+                "name": "totalBorrow",
+                "nameLocation": "483:11:38",
+                "nodeType": "VariableDeclaration",
+                "scope": 9846,
+                "src": "477:17:38",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_struct$_Vault_$9836_storage_ptr",
+                  "typeString": "struct PoolStructs.Vault"
+                },
+                "typeName": {
+                  "id": 9841,
+                  "nodeType": "UserDefinedTypeName",
+                  "pathNode": {
+                    "id": 9840,
+                    "name": "Vault",
+                    "nameLocations": [
+                      "477:5:38"
+                    ],
+                    "nodeType": "IdentifierPath",
+                    "referencedDeclaration": 9836,
+                    "src": "477:5:38"
+                  },
+                  "referencedDeclaration": 9836,
+                  "src": "477:5:38",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_struct$_Vault_$9836_storage_ptr",
+                    "typeString": "struct PoolStructs.Vault"
+                  }
+                },
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 9845,
+                "mutability": "mutable",
+                "name": "vaultInfo",
+                "nameLocation": "514:9:38",
+                "nodeType": "VariableDeclaration",
+                "scope": 9846,
+                "src": "504:19:38",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_struct$_VaultInfo_$9872_storage_ptr",
+                  "typeString": "struct PoolStructs.VaultInfo"
+                },
+                "typeName": {
+                  "id": 9844,
+                  "nodeType": "UserDefinedTypeName",
+                  "pathNode": {
+                    "id": 9843,
+                    "name": "VaultInfo",
+                    "nameLocations": [
+                      "504:9:38"
+                    ],
+                    "nodeType": "IdentifierPath",
+                    "referencedDeclaration": 9872,
+                    "src": "504:9:38"
+                  },
+                  "referencedDeclaration": 9872,
+                  "src": "504:9:38",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_struct$_VaultInfo_$9872_storage_ptr",
+                    "typeString": "struct PoolStructs.VaultInfo"
+                  }
+                },
+                "visibility": "internal"
+              }
+            ],
+            "name": "TokenVault",
+            "nameLocation": "430:10:38",
+            "nodeType": "StructDefinition",
+            "scope": 9888,
+            "src": "423:107:38",
+            "visibility": "public"
+          },
+          {
+            "canonicalName": "PoolStructs.LiquidateWarn",
+            "id": 9851,
+            "members": [
+              {
+                "constant": false,
+                "id": 9848,
+                "mutability": "mutable",
+                "name": "liquidator",
+                "nameLocation": "575:10:38",
+                "nodeType": "VariableDeclaration",
+                "scope": 9851,
+                "src": "567:18:38",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_address",
+                  "typeString": "address"
+                },
+                "typeName": {
+                  "id": 9847,
+                  "name": "address",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "567:7:38",
+                  "stateMutability": "nonpayable",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  }
+                },
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 9850,
+                "mutability": "mutable",
+                "name": "liquidationTimestamp",
+                "nameLocation": "602:20:38",
+                "nodeType": "VariableDeclaration",
+                "scope": 9851,
+                "src": "595:27:38",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint64",
+                  "typeString": "uint64"
+                },
+                "typeName": {
+                  "id": 9849,
+                  "name": "uint64",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "595:6:38",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint64",
+                    "typeString": "uint64"
+                  }
+                },
+                "visibility": "internal"
+              }
+            ],
+            "name": "LiquidateWarn",
+            "nameLocation": "543:13:38",
+            "nodeType": "StructDefinition",
+            "scope": 9888,
+            "src": "536:93:38",
+            "visibility": "public"
+          },
+          {
+            "canonicalName": "PoolStructs.VaultInfo",
+            "id": 9872,
+            "members": [
+              {
+                "constant": false,
+                "id": 9853,
+                "mutability": "mutable",
+                "name": "reserveRatio",
+                "nameLocation": "669:12:38",
+                "nodeType": "VariableDeclaration",
+                "scope": 9872,
+                "src": "662:19:38",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint64",
+                  "typeString": "uint64"
+                },
+                "typeName": {
+                  "id": 9852,
+                  "name": "uint64",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "662:6:38",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint64",
+                    "typeString": "uint64"
+                  }
+                },
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 9855,
+                "mutability": "mutable",
+                "name": "feeToProtocolRate",
+                "nameLocation": "698:17:38",
+                "nodeType": "VariableDeclaration",
+                "scope": 9872,
+                "src": "691:24:38",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint64",
+                  "typeString": "uint64"
+                },
+                "typeName": {
+                  "id": 9854,
+                  "name": "uint64",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "691:6:38",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint64",
+                    "typeString": "uint64"
+                  }
+                },
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 9857,
+                "mutability": "mutable",
+                "name": "flashFeeRate",
+                "nameLocation": "732:12:38",
+                "nodeType": "VariableDeclaration",
+                "scope": 9872,
+                "src": "725:19:38",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint64",
+                  "typeString": "uint64"
+                },
+                "typeName": {
+                  "id": 9856,
+                  "name": "uint64",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "725:6:38",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint64",
+                    "typeString": "uint64"
+                  }
+                },
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 9859,
+                "mutability": "mutable",
+                "name": "ratePerSec",
+                "nameLocation": "761:10:38",
+                "nodeType": "VariableDeclaration",
+                "scope": 9872,
+                "src": "754:17:38",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint64",
+                  "typeString": "uint64"
+                },
+                "typeName": {
+                  "id": 9858,
+                  "name": "uint64",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "754:6:38",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint64",
+                    "typeString": "uint64"
+                  }
+                },
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 9861,
+                "mutability": "mutable",
+                "name": "lastBlock",
+                "nameLocation": "788:9:38",
+                "nodeType": "VariableDeclaration",
+                "scope": 9872,
+                "src": "781:16:38",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint64",
+                  "typeString": "uint64"
+                },
+                "typeName": {
+                  "id": 9860,
+                  "name": "uint64",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "781:6:38",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint64",
+                    "typeString": "uint64"
+                  }
+                },
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 9863,
+                "mutability": "mutable",
+                "name": "lastTimestamp",
+                "nameLocation": "814:13:38",
+                "nodeType": "VariableDeclaration",
+                "scope": 9872,
+                "src": "807:20:38",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint64",
+                  "typeString": "uint64"
+                },
+                "typeName": {
+                  "id": 9862,
+                  "name": "uint64",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "807:6:38",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint64",
+                    "typeString": "uint64"
+                  }
+                },
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 9865,
+                "mutability": "mutable",
+                "name": "baseRate",
+                "nameLocation": "844:8:38",
+                "nodeType": "VariableDeclaration",
+                "scope": 9872,
+                "src": "837:15:38",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint64",
+                  "typeString": "uint64"
+                },
+                "typeName": {
+                  "id": 9864,
+                  "name": "uint64",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "837:6:38",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint64",
+                    "typeString": "uint64"
+                  }
+                },
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 9867,
+                "mutability": "mutable",
+                "name": "slope1",
+                "nameLocation": "869:6:38",
+                "nodeType": "VariableDeclaration",
+                "scope": 9872,
+                "src": "862:13:38",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint64",
+                  "typeString": "uint64"
+                },
+                "typeName": {
+                  "id": 9866,
+                  "name": "uint64",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "862:6:38",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint64",
+                    "typeString": "uint64"
+                  }
+                },
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 9869,
+                "mutability": "mutable",
+                "name": "slope2",
+                "nameLocation": "892:6:38",
+                "nodeType": "VariableDeclaration",
+                "scope": 9872,
+                "src": "885:13:38",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint64",
+                  "typeString": "uint64"
+                },
+                "typeName": {
+                  "id": 9868,
+                  "name": "uint64",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "885:6:38",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint64",
+                    "typeString": "uint64"
+                  }
+                },
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 9871,
+                "mutability": "mutable",
+                "name": "optimalUtilization",
+                "nameLocation": "916:18:38",
+                "nodeType": "VariableDeclaration",
+                "scope": 9872,
+                "src": "908:26:38",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint256",
+                  "typeString": "uint256"
+                },
+                "typeName": {
+                  "id": 9870,
+                  "name": "uint256",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "908:7:38",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  }
+                },
+                "visibility": "internal"
+              }
+            ],
+            "name": "VaultInfo",
+            "nameLocation": "642:9:38",
+            "nodeType": "StructDefinition",
+            "scope": 9888,
+            "src": "635:306:38",
+            "visibility": "public"
+          },
+          {
+            "canonicalName": "PoolStructs.VaultSetupParams",
+            "id": 9887,
+            "members": [
+              {
+                "constant": false,
+                "id": 9874,
+                "mutability": "mutable",
+                "name": "reserveRatio",
+                "nameLocation": "988:12:38",
+                "nodeType": "VariableDeclaration",
+                "scope": 9887,
+                "src": "981:19:38",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint64",
+                  "typeString": "uint64"
+                },
+                "typeName": {
+                  "id": 9873,
+                  "name": "uint64",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "981:6:38",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint64",
+                    "typeString": "uint64"
+                  }
+                },
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 9876,
+                "mutability": "mutable",
+                "name": "feeToProtocolRate",
+                "nameLocation": "1017:17:38",
+                "nodeType": "VariableDeclaration",
+                "scope": 9887,
+                "src": "1010:24:38",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint64",
+                  "typeString": "uint64"
+                },
+                "typeName": {
+                  "id": 9875,
+                  "name": "uint64",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "1010:6:38",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint64",
+                    "typeString": "uint64"
+                  }
+                },
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 9878,
+                "mutability": "mutable",
+                "name": "flashFeeRate",
+                "nameLocation": "1051:12:38",
+                "nodeType": "VariableDeclaration",
+                "scope": 9887,
+                "src": "1044:19:38",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint64",
+                  "typeString": "uint64"
+                },
+                "typeName": {
+                  "id": 9877,
+                  "name": "uint64",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "1044:6:38",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint64",
+                    "typeString": "uint64"
+                  }
+                },
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 9880,
+                "mutability": "mutable",
+                "name": "baseRate",
+                "nameLocation": "1080:8:38",
+                "nodeType": "VariableDeclaration",
+                "scope": 9887,
+                "src": "1073:15:38",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint64",
+                  "typeString": "uint64"
+                },
+                "typeName": {
+                  "id": 9879,
+                  "name": "uint64",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "1073:6:38",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint64",
+                    "typeString": "uint64"
+                  }
+                },
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 9882,
+                "mutability": "mutable",
+                "name": "slope1",
+                "nameLocation": "1105:6:38",
+                "nodeType": "VariableDeclaration",
+                "scope": 9887,
+                "src": "1098:13:38",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint64",
+                  "typeString": "uint64"
+                },
+                "typeName": {
+                  "id": 9881,
+                  "name": "uint64",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "1098:6:38",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint64",
+                    "typeString": "uint64"
+                  }
+                },
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 9884,
+                "mutability": "mutable",
+                "name": "slope2",
+                "nameLocation": "1128:6:38",
+                "nodeType": "VariableDeclaration",
+                "scope": 9887,
+                "src": "1121:13:38",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint64",
+                  "typeString": "uint64"
+                },
+                "typeName": {
+                  "id": 9883,
+                  "name": "uint64",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "1121:6:38",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint64",
+                    "typeString": "uint64"
+                  }
+                },
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 9886,
+                "mutability": "mutable",
+                "name": "optimalUtilization",
+                "nameLocation": "1152:18:38",
+                "nodeType": "VariableDeclaration",
+                "scope": 9887,
+                "src": "1144:26:38",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint256",
+                  "typeString": "uint256"
+                },
+                "typeName": {
+                  "id": 9885,
+                  "name": "uint256",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "1144:7:38",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  }
+                },
+                "visibility": "internal"
+              }
+            ],
+            "name": "VaultSetupParams",
+            "nameLocation": "954:16:38",
+            "nodeType": "StructDefinition",
+            "scope": 9888,
+            "src": "947:230:38",
+            "visibility": "public"
+          }
+        ],
+        "scope": 9889,
+        "src": "59:1120:38",
+        "usedErrors": [],
+        "usedEvents": []
+      }
+    ],
+    "src": "33:1147:38"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.8.20+commit.a1b79de6.Emscripten.clang"
+  },
+  "networks": {},
+  "schemaVersion": "3.4.16",
+  "updatedAt": "2024-12-06T09:30:41.187Z",
+  "devdoc": {
+    "kind": "dev",
+    "methods": {},
+    "version": 1
+  },
+  "userdoc": {
+    "kind": "user",
+    "methods": {},
+    "version": 1
+  }
+}

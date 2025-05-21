@@ -1,109 +1,99 @@
-# Cryptocurrency Transaction Management System (English Version)
+# 加密货币交易管理系统 (中文版)
 
-## Project Fin Overview
-
+## 项目完成概述
 
 | TASK       | DESC                             | STATUS |
 | ---------- | -------------------------------- | ------ |
-| Backend    | Full Transaction Management API  | ✅     |
-| Frontend   | Build a Simple Activity Table UI | ✅     |
+| Backend    | Full Transaction Management API  | ✅      |
+| Frontend   | Build a Simple Activity Table UI | ✅      |
 | Designer   |                                  |        |
 | Blockchain |                                  |        |
 | Web3       |                                  |        |
 
-### All code list
+### 全部代码列表
 
-![image-20250522022720159](./assets/image-20250522022720159.png )
+<img src="./assets/image-20250522022725468.png" alt="image-20250522022725468" style="zoom:50%;" />
 
-## Table of Contents
+## 目录
 
-- [Features](#features)
-- [Implementation Details](#implementation-details)
-- [Frontend](#frontend)
-- [Backend](#backend)
-- [Core Code Implementation](#core-code-implementation)
-- [Installation and Deployment Guide](#installation-and-deployment-guide)
-- [Notes](#notes)
+- [功能特性](#功能特性)
+- [实现细节](#实现细节)
+- [前端](#前端)
+- [后端](#后端)
+- [核心代码实现](#核心代码实现)
+- [安装部署指南](#安装部署指南)
+- [注意事项](#注意事项)
 
-## Features
+## 功能特性
 
-### 1. Transaction Management
+### 1. 交易管理
 
-- **View Transactions**: Sortable, paginated transaction table
-- **Add Transactions**: Modal form with validation for adding new transactions
-- **Delete Transactions**: Confirmation modal for transaction deletion
-- **Transaction Details**: Comprehensive display of transaction information
+- **查看交易**: 可排序、分页的交易表格
+- **添加交易**: 带有验证功能的模态表单，用于添加新交易
+- **删除交易**: 带确认功能的交易删除操作
+- **交易详情**: 全面展示交易信息
 
-### 2. Advanced Filtering and Sorting
+### 2. 高级筛选和排序
 
-- **Search Functionality**: Filter transactions by username or token
-- **Type Filtering**: Filter by transaction type (Stake, Borrow, Lend)
-- **Date Range Filtering**: Filter transactions by date range
-- **Sorting**: Sort transactions by amount, date, and other fields
+- **搜索功能**: 按用户名或代币筛选交易
+- **类型筛选**: 按交易类型筛选（质押、借款、借出）
+- **日期范围筛选**: 按日期范围筛选交易
+- **排序功能**: 按金额、日期等字段排序
 
-### 3. Status Tracking
+### 3. 状态跟踪
 
-- **Status Indicators**: Color-coded status badges (Successful, Waiting, Canceled)
-- **Visual Differentiation**: Clear visual distinction between different transaction states
+- **状态指示器**: 彩色状态标签（成功、等待中、已取消）
+- **视觉区分**: 不同交易状态之间的清晰视觉区分
 
-### 4. Enhanced User Interface
+### 4. 增强的用户界面
 
-- **Responsive Design**: Fully responsive layout for all screen sizes
-- **Tooltips**: Hover functionality for viewing full transaction descriptions
-- **Loading States**: Visual feedback during data loading and operations
-- **Error Handling**: Graceful error handling with user-friendly messages
+- **响应式设计**: 适用于所有屏幕尺寸的完全响应式布局
+- **工具提示**: 悬停功能，用于查看完整的交易描述
+- **加载状态**: 数据加载和操作期间的视觉反馈
+- **错误处理**: 优雅的错误处理，提供用户友好的消息
 
-## Implementation Details
 
-### Frontend
 
-1. **API Integration**
-2. Implemented Axios for backend API interaction
-3. Handled response data and displayed it in the user interface
-4. Implemented loading indicators and error handling mechanisms
-5. Added mock data as a fallback option when API fails
-6. **Page Layout Design**
-7. Designed transaction record list page with pagination support
-8. Provided search box and filtering conditions (by type, status, date range)
-9. Added buttons to trigger creation of new transaction records or deletion of existing ones
-10. Implemented responsive design for optimal experience on all devices
-11. **Form Validation**
-12. Used form validation to ensure all required fields are filled and formatted correctly
-13. Displayed user-friendly error messages
-14. Added real-time validation feedback
-15. **UI Enhancements**
-16. Implemented status labels with color coding (successful=green, waiting=yellow, canceled=red)
-17. Added tooltips for description fields to view full text
-18. Optimized filter section layout and styling
-19. Improved table design with new columns
+## 实现细节
 
-### Backend
+### 前端
 
-1. **Model Definition**
+1. **API集成**
+2. 实现Axios用于后端API交互
+3. 处理响应数据并在用户界面中显示
+4. 实现加载指示器和错误处理机制
+5. 添加模拟数据作为API失败时的回退选项
+6. **页面布局设计**
+7. 设计带有分页支持的交易记录列表页
+8. 提供搜索框和筛选条件（按类型、状态、日期范围）
+9. 添加按钮以触发创建新交易记录或删除现有记录的操作
+10. 实现响应式设计，确保在所有设备上的最佳体验
+11. **表单验证**
+12. 使用表单验证确保所有必填字段已填写且格式正确
+13. 显示用户友好的错误消息
+14. 添加实时验证反馈
+15. **UI增强**
+16. 实现带有颜色编码的状态标签（成功=绿色，等待=黄色，取消=红色）
+17. 为描述字段添加工具提示以查看完整文本
+18. 优化筛选部分的布局和样式
+19. 改进表格设计，添加新列
 
-2. Defined `Transaction` model with `id`, `username`, `transactionType`, `token`, `amount`, `date`, `status`, and `description` fields
+### 后端
 
-3. Added validation rules to ensure data integrity
+1. **模型定义**
+2. 定义`Transaction`模型，包含`id`、`username`、`transactionType`、`token`、`amount`、`date`、`status`和`description`字段
+3. 添加验证规则以确保数据完整性
+4. **API路由实现**
+5. 实现交易记录的CRUD操作
+6. 添加基于`transactionType`、`startDate`、`endDate`、`status`和`description`的筛选功能
+7. 支持分页、排序和搜索
+8. 添加错误处理中间件
+10. 配置CORS中间件以允许跨域请求
+12. 添加请求日志记录
 
-4. **API Route Implementation**
+## 核心代码实现
 
-5. Implemented CRUD operations for transaction records
-
-6. Added filtering functionality based on `transactionType`, `startDate`, `endDate`, `status`, and `description`
-
-7. Supported pagination, sorting, and searching
-
-8. Added error handling middleware
-
-9. Configured CORS middleware to allow cross-origin requests
-
-10. Added request logging
-
-    
-
-## Core Code Implementation
-
-### Transaction Interface Definition
+### 交易接口定义
 
 ```typescript
 export interface Transaction {
@@ -122,7 +112,7 @@ export type TransactionType = "Stake" | "Borrow" | "Lend"
 
 ### Restful Api （CRUD）
 
-```typescript
+```javascriptreact
 const express = require('express');
 const router = express.Router();
 const { body, query , check, validationResult} = require('express-validator');
@@ -319,49 +309,48 @@ module.exports = router;
 
 
 
-## Installation and Deployment Guide
+## 安装部署指南
 
-### Prerequisites
+### 环境准备
 
-Ensure you have the following software installed:
+确保已安装以下软件：
 
 - Node.js v14+
 - MongoDB
 
-###  Installation
+### 后端安装
 
-1. Clone the repository:
+1. 克隆仓库：
 
 ```shellscript
 git clone [repository-url]
+cd backend
 ```
 
-2. Install dependencies:
+2. 安装依赖：
 
 ```shellscript
 npm install
 ```
 
-3. Configure API endpoint:
+3. 配置API端点：
 
 ```shellscript
-# Set API base URL in .env file
+# 在.env文件中设置API基础URL
 REACT_APP_API_BASE_URL=http://localhost:5001/api
 ```
 
-4. Start the development server:
+4. 启动开发服务器：
 
 ```shellscript
 npm run dev
 ```
 
-5. The application runs by default at `http://localhost:3000`
+5. 应用默认运行在`http://localhost:3000`
 
-## Notes
+## 注意事项
 
-- Ensure the backend service is running for the frontend to correctly call the API
-- If you need to modify the default port numbers, adjust the API request address in the frontend code accordingly
-- The system uses mock data by default, which can be switched to actual API by uncommenting the API call code
-- All form fields have validation to ensure correct data format input
-
----
+- 确保后端服务正在运行，以便前端能够正确调用API
+- 如需修改默认端口号，请相应调整前端代码中的API请求地址
+- 系统默认使用模拟数据，可以通过取消注释API调用代码来切换到实际API
+- 所有表单字段都有验证，确保输入正确的数据格式

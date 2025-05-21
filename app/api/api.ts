@@ -146,9 +146,6 @@ export const deleteTransaction = async (id: string): Promise<void> => {
           throw new Error(`API error: ${response.status}`)
         }
 
-        // Mock implementation
-        console.log("Deleting transaction (mock):", id)
-        await new Promise((resolve) => setTimeout(resolve, 500)) // Simulate API delay
     } catch (error) {
         console.error("Error deleting transaction:", error)
         throw error

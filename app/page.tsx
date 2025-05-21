@@ -33,6 +33,13 @@ const features = [
   buttonLink: "/save",
   icon: "shild", // Replace with your icon
  },
+ {
+  title: "Transactions",
+  description: "A powerful, trustless exchange that empowers individuals and drives the decentralized future.",
+  buttonText: "Recent Transactions",
+  buttonLink: "/transactions",
+  icon: "shild", // Replace with your icon
+ },
 ]
 
 const HomePage = () => {

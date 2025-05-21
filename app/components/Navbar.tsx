@@ -31,6 +31,7 @@ export default function Navbar() {
   { name: t("staking"), href: "/stake", current: false },
   { name: "Borrow", href: "/borrow", current: false },
   { name: "Save", href: "/save", current: false },
+  { name: "Transaction", href: "/transactions", current: false },
  ]
  const pathname = usePathname()
  return (
